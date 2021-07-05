@@ -17,11 +17,16 @@ spring:
   # DB
   # ===============================
   datasource:
-    url: jdbc:mysql://database-1.czartav11eck.us-east-1.rds.amazonaws.com
-    driverClassName: com.mysql.cj.jdbc.Driver
-    platform: org.hibernate.dialect.MySQL8Dialect
-    username: admin
-    password: prueba123
+    #url: jdbc:mysql://database-1.czartav11eck.us-east-1.rds.amazonaws.com
+    url: jdbc:postgresql://localhost:5432/pruebaDB
+    #driverClassName: com.mysql.cj.jdbc.Driver
+    driverClassName: org.postgresql.Driver
+    ##platform: org.hibernate.dialect.MySQL8Dialect
+    platform: org.hibernate.dialect.PostgreSQLDialect
+    #username: admin
+    username: postgres
+    #password: prueba123
+    password: Kingjinx18
 
   # ===============================
   # JPA / HIBERNATE
@@ -30,7 +35,8 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: update
-    database-platform: org.hibernate.dialect.MySQL8Dialect
+    #database-platform: org.hibernate.dialect.MySQL8Dialect
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
     properties:
       hibernate:
         show_sql: true
