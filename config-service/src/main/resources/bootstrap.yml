@@ -5,12 +5,12 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/PaulSoftCompany/Foodyeah-FAS.git
+          uri: https://github.com/HydraGriua/pruebaFAS.git
           searchPaths: config-data
           username: ${GIT_USER}
           password: ${GIT_PASSWORD}
-          default-label: "deployment"
+          default-label: "master"
   security:
     user:
-      name: paulsoftcomp
-      password: paulsoftcompany123
+      name: pruebateodio
+      password: pruebateodio123

@@ -1,0 +1,49 @@
+version: "3"
+services:
+  inventory-service:
+    image: social-service
+    ports:
+      - "8091:8091"
+    networks:
+      - prueba-network
+    depends_on:
+      - registry-service
+    restart: on-failure
+
+  gateway-service:
+    image: gateway-service
+    ports:
+      - "8080:8080"
+    networks:
+      - prueba-network
+    depends_on:
+      - social-service
+    restart: on-failure
+
+
+  registry-service:
+    image: registry-service
+    ports:
+      - "8099:8099"
+    networks:
+      - prueba-network
+    depends_on:
+      - config-service
+    restart: on-failure
+
+  config-service:
+    image: config-service
+    ports:
+      - "8081:8081"
+    networks:
+      - prueba-network
+
+  admin-service:
+    image: admin-service
+    ports:
+      - "8086:8086"
+    networks:
+      - prueba-network
+
+networks:
+  prueba-network:
