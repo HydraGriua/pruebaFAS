@@ -4,8 +4,8 @@ import java.util.List;
 import com.crehana.socialservice.models.Comment;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
-@Repository
+//import org.springframework.stereotype.Repository;
+
 public interface CommentRepository extends JpaRepository<Comment,Long>{
-    List<Comment> FindAllByPostId(long postId);
+    List<Comment> findAllByPostId(Long postId);
 }

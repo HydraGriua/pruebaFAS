@@ -32,7 +32,7 @@ public class CommentServiceImpl implements CommentService{
 
     @Override
     public List<Comment> getCommentsByPostId(Long postId) {
-        return commentRepository.FindAllByPostId(postId);
+        return commentRepository.findAllByPostId(postId);
     }
 
     @Override
